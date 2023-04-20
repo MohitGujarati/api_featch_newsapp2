@@ -5,6 +5,7 @@ data class Article_model(
     val content: String,
     val author: String,
     val title: String,
+    val publishedAt: String,
     val description: String,
     val url: String,
     val urlToImage: String
