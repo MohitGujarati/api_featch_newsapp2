@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 
 const val BASE_URL = "https://newsapi.org/"
-const val API_KEY = "6566c770e39349c1b7f924d0bc85a62f"
+const val API_KEY = "Enter you api key"
 const val NEWS_API = "v2/top-headlines?country=in&apiKey=$API_KEY"
 
 
