@@ -3,6 +3,7 @@ package com.example.api_featch_newsapp2
 import android.content.ComponentCallbacks
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,10 @@ import com.example.api_featch_newsapp2.Adapter.myAdapter
 import com.example.api_featch_newsapp2.Apis.RetroObject
 import com.example.api_featch_newsapp2.Model.Article_model
 import com.example.api_featch_newsapp2.Model.main_model
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,8 +31,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         recview = findViewById(R.id.recview)
+        Log.i("Thread_main","${Thread.currentThread().toString()}")
+        CoroutineScope(Dispatchers.IO).launch {
+            getallnews()
+            Log.i("Thread_main:","${Thread.currentThread().toString()}")
+        }
 
-        getallnews()
 
     }
 
