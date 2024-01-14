@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">api_featch_newsapp2</string>
+    <string name="app_name">NewsApp2024</string>
+    <string name="LatestNews">Latest News</string>
+    <string name="Headline">Headlines</string>
+    <string name="Description">Description</string>
+    <string name="Share">Share</string>
+    <string name="Read_more">Read More</string>
+    <string name="Source_Name">Source Name</string>
 </resources>
