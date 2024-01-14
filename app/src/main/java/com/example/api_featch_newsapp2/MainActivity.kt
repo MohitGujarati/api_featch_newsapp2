@@ -31,10 +31,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         recview = findViewById(R.id.recview)
-        Log.i("Thread_main","${Thread.currentThread().toString()}")
+        Log.i("Thread_main", Thread.currentThread().toString())
         CoroutineScope(Dispatchers.IO).launch {
             getallnews()
-            Log.i("Thread_main:","${Thread.currentThread().toString()}")
+            Log.i("Thread_main:","${Thread.currentThread()}")
         }
 
 
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         val retrofit = RetroObject.getapi
         val newslist: ArrayList<Article_model> = ArrayList()
 
-        retrofit.getnew().enqueue(object : Callback<main_model> {
+        retrofit.getNews().enqueue(object : Callback<main_model> {
             override fun onResponse(call: Call<main_model>, response: Response<main_model>) {
                 val data = response.body()
                 if (data != null) {

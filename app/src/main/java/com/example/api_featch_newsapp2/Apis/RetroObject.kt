@@ -2,7 +2,6 @@ package com.example.api_featch_newsapp2.Apis
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 object RetroObject {
 
@@ -14,7 +13,7 @@ object RetroObject {
     }
 
     val getapi by lazy {
-        retrofit.create(Api_Interface::class.java)
+        retrofit.create(apiInterface::class.java)
     }
 
 

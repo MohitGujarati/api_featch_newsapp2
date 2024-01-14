@@ -33,24 +33,20 @@ class myAdapter(var context: Context, var newsdatalist: ArrayList<Article_model>
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        var mymodel = newsdatalist[position]
+        val mymodel = newsdatalist[position]
         holder.txttile.text = mymodel.title
         holder.txtdes.text = mymodel.description
         holder.tv_publish.text = " ${mymodel.source.name}"
 
         Log.i("newsContent","${mymodel.content}")
 
-        var urlString = mymodel.url
+        val urlString = mymodel.url
 
         holder.btn.setOnClickListener {
-            if (urlString!=null){
-                try {
-                    context?.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(urlString)))
-                }catch (e:IOException){
-                    Toast.makeText(context, "error", Toast.LENGTH_SHORT).show()
-                }
-            }else{
-                holder.btn.visibility=View.GONE
+            try {
+                context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(urlString)))
+            }catch (e:IOException){
+                Toast.makeText(context, "Try again later", Toast.LENGTH_SHORT).show()
             }
 
         }

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="3dp"
-    android:backgroundTint="#F3F1F1"
-    app:cardCornerRadius="8dp">
+    app:cardElevation="15dp"
+    app:cardCornerRadius="10dp">
 
-    <RelativeLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="2dp">
@@ -27,14 +28,23 @@
             android:layout_below="@+id/newsImage"
             android:layout_marginBottom="3dp"
             android:padding="3dp"
+            android:textAlignment="textStart"
+            android:fontFamily="sans-serif-black"
+            android:hint="Headline"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_des"
+            android:textSize="14sp"
+            android:hint="Description"
+            android:textAlignment="textStart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
             android:layout_below="@+id/tv_headline"
-            android:layout_marginBottom="3dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="5dp"
             android:padding="3dp" />
 
 
@@ -52,7 +62,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#12000000"
-
                 android:text="Read more"
                 android:textColor="@color/black"
                 android:textSize="12sp"
@@ -82,11 +91,11 @@
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="hello world"/>
+                android:hint="Source name"/>
 
         </LinearLayout>
 
 
-    </RelativeLayout>
+    </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>
